@@ -9,11 +9,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TodolistComponent } from './todolist/todolist.component';
 import { TodosService } from './todos.service';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodolistComponent
+    TodolistComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

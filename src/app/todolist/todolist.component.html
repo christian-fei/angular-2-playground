@@ -1,5 +1,1 @@
-<ul>
-  <li *ngFor="let todo of todos">
-    <pre>{{todo | json}}</pre>
-  </li>
-</ul>
+<todo [data]="todo" *ngFor="let todo of todos"></todo>
