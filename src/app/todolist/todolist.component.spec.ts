@@ -13,7 +13,8 @@ import { TodolistComponent } from './todolist.component';
 import { TodoComponent } from '../todo/todo.component';
 import { Todo } from '../todo/todo.model';
 
-let testTodo:Todo;
+
+let testTodo: Todo = new Todo('test todo', false);
 
 class FakeTodosService {
   getTodos(): Observable<Todo[]> {
@@ -22,13 +23,12 @@ class FakeTodosService {
 }
 
 describe('TodolistComponent', () => {
+  let element: Element;
   let component: TodolistComponent;
   let fixture: ComponentFixture<TodolistComponent>;
   let todosService: FakeTodosService;
 
   beforeEach(async(() => {
-    testTodo = new Todo('test todo', false);
-
     todosService = new FakeTodosService();
     TestBed.configureTestingModule({
       imports: [
@@ -52,17 +52,5 @@ describe('TodolistComponent', () => {
 
   it('creates component', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('renders todos', () => {
-    const element = fixture.nativeElement;
-    expect(element.textContent).toContain('test todo');
-  });
-
-  it('hides completed todos', () => {
-    component.completeTodo(testTodo);
-    fixture.detectChanges();
-    const element = fixture.nativeElement;
-    expect(element.textContent).toEqual('');    
   });
 });
