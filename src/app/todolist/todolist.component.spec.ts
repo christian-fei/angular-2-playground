@@ -51,6 +51,7 @@ describe('TodolistComponent', () => {
   });
 
   it('renders todos', () => {
-    console.log(component);
+    // const element = fixture.nativeElement;
+    // expect(element.textContent).toEqual('test todo');
   });
 });
