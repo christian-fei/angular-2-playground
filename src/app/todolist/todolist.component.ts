@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoComponent } from '../todo/todo.component';
 import { TodosService } from '../todos.service';
-import { Todo } from '../todo/todo'
+import { Todo } from '../todo/todo.model'
 
 @Component({
   selector: 'todolist',
@@ -15,7 +15,8 @@ export class TodolistComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.todosService.getTodos().subscribe(todos => this.todos = todos);
+    this.todosService.getTodos()
+    .subscribe(todos => this.todos = todos);
   }
 
   completeTodo(todoToComplete: Todo) {

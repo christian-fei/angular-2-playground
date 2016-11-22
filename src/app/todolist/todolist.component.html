@@ -1,1 +1,5 @@
-<todo class="todo" [data]="todo" *ngFor="let todo of todos"></todo>
+<ul>
+    <li *ngFor="let todo of todos">
+        <todo class="todo" [data]="todo"></todo>
+    </li>
+</ul>
