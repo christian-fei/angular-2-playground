@@ -9,7 +9,7 @@ export class TodosService {
 
   constructor(private http: Http) { }
 
-  getTodos(): Observable<[Todo]> {
+  getTodos(): Observable<Todo[]> {
     return this.http.get(this.todosUrl)
     .map(this.extractData)
     .catch(this.handleError);

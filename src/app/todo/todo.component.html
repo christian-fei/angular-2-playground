@@ -1,3 +1,1 @@
-<span *ngIf="data">
-    {{ data.text }}
-</span>
+<span *ngIf="data && !data.completed">{{ data.text }}</span>
