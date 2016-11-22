@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoComponent } from '../todo/todo.component';
 import { TodosService } from '../todos.service';
+import { Todo } from '../todo/todo'
 
 @Component({
   selector: 'todolist',
@@ -8,7 +9,7 @@ import { TodosService } from '../todos.service';
   styleUrls: ['./todolist.component.css']
 })
 export class TodolistComponent implements OnInit {
-  todos = [];
+  todos : Array<Todo> = [];
 
   constructor(private todosService: TodosService) {
   }

@@ -11,10 +11,11 @@ import { HttpModule, Http, ConnectionBackend } from '@angular/http';
 import { TodosService } from '../todos.service'
 import { TodolistComponent } from './todolist.component';
 import { TodoComponent } from '../todo/todo.component';
+import { Todo } from '../todo/todo';
 
 
 class FakeTodosService {
-  getTodos(): Observable<any> {
+  getTodos(): Observable<Todo> {
     return Observable.of([{text: "test todo"}]);
   }
 }
@@ -51,7 +52,7 @@ describe('TodolistComponent', () => {
   });
 
   it('renders todos', () => {
-    // const element = fixture.nativeElement;
-    // expect(element.textContent).toEqual('test todo');
+    const element = fixture.nativeElement;
+    expect(element.textContent).toContain('test todo');
   });
 });
