@@ -1,6 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
-import { TodosService } from '../todos.service'
+import { TodoComponent } from '../todo/todo.component';
+import { TodosService } from '../todos.service';
 
 @Component({
   selector: 'todolist',
